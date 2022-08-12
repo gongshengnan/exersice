@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"></link>
+    <style>
+        /* 后代选择器 */
+        
+        ol li {
+            color: red;
+        }
+        
+        .test li {
+            color: red;
+        }
+        /* 子选择器 */
+        
+        .qinzi>a {
+            color: red;
+        }
+        /* 并集选择器a,b */
+        /* 伪类选择器 */
+        
+        input:focus {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 多类名 ，类名可以多个-->
+    <div class="one other"></div>
+    <div class="two"></div>
+    <div class="one"></div>
+
+    <!-- id选择器 ，唯一-->
+    <div id="one">森森森</div>
+    <div>渐渐</div>
+    <a>测试</a>
+    <ul>
+        <li>ul的孩子</li>
+        <li>ul的孩子</li>
+        <li>ul的孩子</li>
+    </ul>
+    <ul class="test">
+        <li>ul的孩子</li>
+        <li>ul的孩子</li>
+        <li>ul的孩子</li>
+    </ul>
+    <ol>
+        <li>ol的孩子</li>
+        <li>ol的孩子</li>
+        <li>ol的孩子</li>
+    </ol>
+
+
+    <div class="qinzi">
+        <a href="#">
+            aaa
+            <p>
+                <a href="#">aaa</a>
+        </p>
+        </a>
+    </div>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <!-- 行元素、块元素 -->
+    <!-- 块元素：独占一行；可以给宽高；宽度默认继承父级；里面可以放块和行元素；文字内元素不能放块元素 -->
+    <!-- 行元素：一行可放多个；宽高无效；行内元素只能放文本或行内元素，特殊：a可以放块级元素 -->
+    <!-- 行类块元素：img、input、td；（可设置宽高） -->
+    <!-- 
+    行内转块 display:block;可设置宽高 a
+    块转行  display:inline; 可在一行显示  div
+    行内块元素  display:inline-block
+     -->
+
+</body>
+
+</html>

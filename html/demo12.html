@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .tab {
+            margin: 0px auto;
+            width: 500px;
+        }
+        
+        .tab ul {
+            display: flex;
+            justify-content: space-around;
+            width: 500px;
+            height: 50px;
+        }
+        
+        .tab ul li {
+            width: 100px;
+            line-height: 50px;
+            text-align: center;
+        }
+        
+        .tabbox {
+            background: white;
+            color: black;
+        }
+        
+        .tabbox_choose {
+            background: blue;
+            color: white;
+        }
+        
+        .line {
+            width: 500px;
+            height: 1px;
+            background: blue;
+        }
+        
+        .content {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ededed;
+        }
+        
+        .content div {
+            display: none;
+        }
+        
+        .content .first {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <ul>
+            <li class="tabbox_choose">栏目一</li>
+            <li class="tabbox">栏目二</li>
+            <li class="tabbox">栏目三</li>
+            <li class="tabbox">栏目四</li>
+            <li class="tabbox">栏目五</li>
+        </ul>
+        <div class="line"></div>
+        <div class="content">
+            <div class="first">内容一</div>
+            <div class="">内容二</div>
+            <div class="">内容三</div>
+            <div class="">内容四</div>
+            <div class="">内容五</div>
+        </div>
+    </div>
+
+</body>
+<script>
+    var tab = document.querySelector('ul');
+    var tabbox = tab.querySelectorAll('li');
+    var content = document.querySelector('.content');
+    var contentbox = content.querySelectorAll('div');
+    for (var i = 0; i < tabbox.length; i++) {
+        tabbox[i].setAttribute('index', i);
+        tabbox[i].onclick = function() {
+            for (var i = 0; i < tabbox.length; i++) {
+                tabbox[i].className = 'tabbox';
+            }
+            this.className = 'tabbox_choose';
+            var index = this.getAttribute('index');
+            for (var j = 0; j < contentbox.length; j++) {
+                contentbox[j].style.display = 'none';
+            }
+            contentbox[index].style.display = 'block';
+        }
+    }
+</script>
+
+</html>

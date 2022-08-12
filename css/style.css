@@ -1,0 +1,45 @@
+.one {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.other {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+.two {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+
+#one {
+    color: brown;
+    font: italic 700 16px 'Micorsoft Yahei';
+    text-align: left;
+    text-decoration: overline;
+    text-indent: 2em;
+    line-height: 2em;
+    text-align-last: left;
+    background-color: #fff;
+    text-align: center;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: orange;
+}
+
+a:hover {
+    color: aqua;
+}
+
+a:active {
+    color: black;
+}

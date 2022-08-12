@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 100px auto;
+            width: 1600px;
+            height: 500px;
+            background-color: antiquewhite;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .box div {
+            width: 400px;
+            height: 400px;
+            line-height: 400px;
+            /* margin: 20px; */
+            background-color: black;
+            color: white;
+            font-size: 100px;
+            text-align: center;
+        }
+        
+        .box p {
+            color: black;
+            font-size: 100px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- <button>停止计时器</button> -->
+    <div class="box">
+        <div id="hour"></div>
+        <p>:</p>
+        <div id="minutes"></div>
+        <p>:</p>
+        <div id="seconds"></div>
+    </div>
+    <script>
+        // var btn = document.querySelector('button');
+        // var time = setTimeout(fn, 5000);
+
+        // function fn() {
+        //     alert('时间到了');
+        // }
+        // btn.addEventListener('click', fn2);
+
+        // function fn2() {
+        //     clearTimeout(fn);
+        // }
+        var hour = document.getElementById('hour');
+        var minutes = document.getElementById('minutes');
+        var seconds = document.getElementById('seconds');
+        var set = +new Date('2022-06-29 17:30:00');
+        fn();
+        setInterval(fn, 1000);
+
+        function fn() {
+            var now = +new Date();
+            var time = (set - now) / 1000;
+            var h = parseInt(time / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h;
+            var m = parseInt(time / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            minutes.innerHTML = m;
+            var s = parseInt(time % 60);
+            s = s < 10 ? '0' + s : s;
+            seconds.innerHTML = s;
+        }
+    </script>
+</body>
+
+</html>

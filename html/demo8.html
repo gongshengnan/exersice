@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .tab {
+            width: 800px;
+            margin: 0 auto;
+        }
+        
+        .nav {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav li {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 14px;
+            color: black;
+            background-color: white;
+            border: none;
+        }
+        
+        .nav .choose {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 14px;
+            color: white;
+            background-color: green;
+            border: 1px solid green;
+        }
+        
+        .con {
+            border: 1px solid green;
+            width: 800px;
+            height: 360px;
+        }
+        
+        .con .content {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <ul class="nav">
+            <li class="choose" id="0">标题一</li>
+            <li id="1">标题二</li>
+            <li id="2">标题三</li>
+            <li id="3">标题四</li>
+            <li id="4">标题五</li>
+        </ul>
+        <div class="con">
+            <div class="content" style="display:block;">内容面板一</div>
+            <div class="content">内容面板二</div>
+            <div class="content">内容面板三</div>
+            <div class="content">内容面板四</div>
+            <div class="content">内容面板五</div>
+        </div>
+    </div>
+    <script>
+        var nav = document.querySelector('.nav');
+        var li = nav.querySelectorAll('li');
+        var content = document.querySelectorAll('.content');
+        for (var i = 0; i < li.length; i++) {
+            //li[i].setAttribute('index', i);
+            li[i].onclick = function() {
+
+                for (var j = 0; j < li.length; j++) {
+                    li[j].className = '';
+                }
+                this.className = 'choose';
+                for (var j = 0; j < content.length; j++) {
+                    content[j].style.display = 'none';
+                }
+                //var index = this.getAttribute('index');
+                var index = this.getAttribute('id');
+                console.log(index);
+                content[index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+
+</html>
